@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="style.css">
+    <script src="carrinho.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Adicionar ao Carrinho</h2>
+            <label for="produto">Produto:</label>
+            <select id="produto" name="produto">
+                <option value="Airpods">Fone de ouvido</option>
+                <option value="USB">Cabo USB</option>
+                <option value="Pelicula">Pelicula </option>
+                <option value="Carregador">Carregador</option>
+                <option value="mouses">Mouses</option>
+                <option value="som">Caixa de som</option>
+                <option value="Alexia">Alexia</option>
+            </select>
+            <button type="button" onclick="adicionarItem(document.getElementById('produto').value)">Adicionar</button>
+            <button type="button" onclick="removerItem(document.getElementById('produto').value)">Remover</button>
+        </div>
+
+        <div class="cart-box">
+            <h2>Carrinho de Compras</h2>
+            <div id="carrinho"></div>
+            <h2>Total da Compra</h2>
+            <p id="total">R$ 0.00</p>
+        </div>
+    </div>
+
+    <script>
+        let carrinho = {};
+        const precos = {
+            Airpods: 50.00,
+            USB: 80.00,
+            Pelicula: 20.00,
+            Carregador: 50.00,
+            mouses: 30.00,
+            Caixa: 120.00,
+            Alexia: 100.00
+        };
+
+        function adicionarItem(item) {
+            if (carrinho[item]) {
+                carrinho[item]++;
+            } else {
+                carrinho[item] = 1;
+            }
+            atualizarCarrinho();
+        }
+
+        function removerItem(item) {
+            if (carrinho[item]) {
+                carrinho[item]--;
+                if (carrinho[item] === 0) {
+                    delete carrinho[item];
+                }
+                atualizarCarrinho();
+            }
+        }
+
+        function calcularTotal() {
+            let total = 0;
+            for (let item in carrinho) {
+                total += carrinho[item] * precos[item];
+            }
+            return total.toFixed(2);
+        }
+
+        function atualizarCarrinho() {
+            const carrinhoDiv = document.getElementById('carrinho');
+            carrinhoDiv.innerHTML = '';
+            for (let item in carrinho) {
+                const div = document.createElement('div');
+                div.textContent = `${item} x${carrinho[item]}`;
+                carrinhoDiv.appendChild(div);
+            }
+            document.getElementById('total').textContent = `R$ ${calcularTotal()}`;
+        }
+    </script>
+</body>
+</html>
