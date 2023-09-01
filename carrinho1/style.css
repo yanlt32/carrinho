@@ -1,0 +1,140 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #3f51b5;
+  }
+  
+  h2 {
+    font-size: 18px;
+    color: #3f51b5;
+    margin-top: 30px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .form-group label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .form-group select,
+  .form-group input {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group button {
+    background-color: #3f51b5;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .carrinho {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .produto {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .produto:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .produto h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  
+  .produto p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .quantidade {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .quantidade label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .quantidade input {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+  }
+  
+  .botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .botao button {
+    background-color: #3f51b5;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .carrinho {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+  }
